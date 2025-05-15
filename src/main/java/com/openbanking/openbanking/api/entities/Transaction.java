@@ -1,4 +1,4 @@
-package com.openbanking.openbanking.account.impl.entities;
+package com.openbanking.openbanking.api.entities;
 
 import jakarta.persistence.*;
 import lombok.*;

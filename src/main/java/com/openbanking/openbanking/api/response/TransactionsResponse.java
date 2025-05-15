@@ -1,6 +1,6 @@
-package com.openbanking.openbanking.account.impl.response;
+package com.openbanking.openbanking.api.response;
 
-import com.openbanking.openbanking.account.impl.entities.Transaction;
+import com.openbanking.openbanking.api.entities.Transaction;
 import lombok.*;
 
 import java.util.List;

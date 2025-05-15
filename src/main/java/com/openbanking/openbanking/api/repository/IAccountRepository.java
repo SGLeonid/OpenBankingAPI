@@ -1,6 +1,6 @@
-package com.openbanking.openbanking.account.impl.repository;
+package com.openbanking.openbanking.api.repository;
 
-import com.openbanking.openbanking.account.impl.entities.Account;
+import com.openbanking.openbanking.api.entities.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IAccountRepository extends JpaRepository<Account, Long> {

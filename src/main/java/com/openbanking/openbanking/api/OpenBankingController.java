@@ -1,11 +1,11 @@
-package com.openbanking.openbanking.account.impl;
+package com.openbanking.openbanking.api;
 
-import com.openbanking.openbanking.account.impl.entities.Account;
-import com.openbanking.openbanking.account.impl.request.TransactionRequest;
-import com.openbanking.openbanking.account.impl.response.AccountCreateRequest;
-import com.openbanking.openbanking.account.impl.response.BalanceInfo;
-import com.openbanking.openbanking.account.impl.service.OpenBankingService;
-import com.openbanking.openbanking.account.impl.entities.Transaction;
+import com.openbanking.openbanking.api.entities.Account;
+import com.openbanking.openbanking.api.request.TransactionRequest;
+import com.openbanking.openbanking.api.response.AccountCreateRequest;
+import com.openbanking.openbanking.api.response.BalanceInfo;
+import com.openbanking.openbanking.api.service.OpenBankingService;
+import com.openbanking.openbanking.api.entities.Transaction;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

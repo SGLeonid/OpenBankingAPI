@@ -1,4 +1,4 @@
-package com.openbanking.openbanking.account.impl.request;
+package com.openbanking.openbanking.api.request;
 
 import lombok.*;
 

@@ -1,6 +1,5 @@
-package com.openbanking.openbanking.account.impl.response;
+package com.openbanking.openbanking.api.response;
 
-import com.openbanking.openbanking.account.impl.entities.Account;
 import lombok.*;
 
 @Getter

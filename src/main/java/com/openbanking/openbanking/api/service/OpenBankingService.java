@@ -1,7 +1,7 @@
-package com.openbanking.openbanking.account.impl.service;
+package com.openbanking.openbanking.api.service;
 
-import com.openbanking.openbanking.account.impl.entities.Account;
-import com.openbanking.openbanking.account.impl.entities.Transaction;
+import com.openbanking.openbanking.api.entities.Account;
+import com.openbanking.openbanking.api.entities.Transaction;
 
 import java.util.List;
 

@@ -1,9 +1,9 @@
-package com.openbanking.openbanking.account.impl.service;
+package com.openbanking.openbanking.api.service;
 
-import com.openbanking.openbanking.account.impl.entities.Account;
-import com.openbanking.openbanking.account.impl.repository.IAccountRepository;
-import com.openbanking.openbanking.account.impl.repository.ITransactionRepository;
-import com.openbanking.openbanking.account.impl.entities.Transaction;
+import com.openbanking.openbanking.api.entities.Account;
+import com.openbanking.openbanking.api.repository.IAccountRepository;
+import com.openbanking.openbanking.api.repository.ITransactionRepository;
+import com.openbanking.openbanking.api.entities.Transaction;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
