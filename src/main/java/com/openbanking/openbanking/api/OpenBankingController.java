@@ -65,11 +65,6 @@ public class OpenBankingController {
             return new ResponseEntity<>("Account not found", HttpStatus.NOT_FOUND);
         }
 
-        // Make sure the sender has enough money to make the transaction
-        if (senderAccount.getUsdBalance() < transactionRequest.getAmount()) {
-            return new ResponseEntity<>("Not enough money", HttpStatus.BAD_REQUEST);
-        }
-
         // Create a new transaction instance
         Transaction transaction = new Transaction();
         transaction.setSenderAccountId(senderAccount.getId());
@@ -80,9 +75,19 @@ public class OpenBankingController {
         // Change balances according to the amount of money in the transaction
         // Not the best solution of multiple choice but for the first time is OK :D
         if (transactionRequest.getCurrency().equals("USD")) {
+            // Make sure the sender has enough money to make the transaction
+            if (senderAccount.getUsdBalance() < transactionRequest.getAmount()) {
+                return new ResponseEntity<>("Not enough money", HttpStatus.BAD_REQUEST);
+            }
+
             senderAccount.setUsdBalance(senderAccount.getUsdBalance() - transaction.getAmount());
             receiverAccount.setUsdBalance(receiverAccount.getUsdBalance() + transaction.getAmount());
         } else if (transactionRequest.getCurrency().equals("EUR")) {
+            // Make sure the sender has enough money to make the transaction
+            if (senderAccount.getEurBalance() < transactionRequest.getAmount()) {
+                return new ResponseEntity<>("Not enough money", HttpStatus.BAD_REQUEST);
+            }
+
             senderAccount.setEurBalance(senderAccount.getEurBalance() - transaction.getAmount());
             receiverAccount.setEurBalance(receiverAccount.getEurBalance() + transaction.getAmount());
         } else {
