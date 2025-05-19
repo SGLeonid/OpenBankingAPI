@@ -120,7 +120,6 @@ public class OpenBankingController {
         account.setSurname(accountCreateRequest.getSurname());
         account.setFirstname(accountCreateRequest.getFirstname());
         account.setIban(ibanBuilder.toString());
-        System.out.println(ibanBuilder.toString());
         account.setUsdBalance(0.0f);
         account.setEurBalance(0.0f);
 
