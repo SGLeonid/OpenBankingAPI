@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 @RestController
 @RequestMapping("/api")
@@ -103,21 +104,23 @@ public class OpenBankingController {
     }
 
     // Create a new account with no money
-    @PostMapping(path = "/payments/initiate", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/accounts/create", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> createAccount(@RequestBody AccountCreateRequest accountCreateRequest) {
         // TODO: Set first two letters depending on the country from which the account is being registered
+        Random random = new Random();
         StringBuilder ibanBuilder = new StringBuilder();
         for (int i = 0; i < 2; i++) {
-            ibanBuilder.append(Math.random() * 25 + 'A');
+            ibanBuilder.append((char)(random.nextInt(26) + 'A'));
         }
         for (int i = 0; i < 19; i++) {
-            ibanBuilder.append(Math.random() * 9 + '0');
+            ibanBuilder.append((char)(random.nextInt(9) + '0'));
         }
 
         Account account = new Account();
         account.setSurname(accountCreateRequest.getSurname());
         account.setFirstname(accountCreateRequest.getFirstname());
         account.setIban(ibanBuilder.toString());
+        System.out.println(ibanBuilder.toString());
         account.setUsdBalance(0.0f);
         account.setEurBalance(0.0f);
 
@@ -127,6 +130,6 @@ public class OpenBankingController {
             return new ResponseEntity<>("Registration failed", HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
-        return new ResponseEntity<>("OK", HttpStatus.OK);
+        return new ResponseEntity<>(account.getIban(), HttpStatus.OK);
     }
 }
