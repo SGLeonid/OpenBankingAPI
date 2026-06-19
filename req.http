@@ -1,0 +1,45 @@
+### GET request to example server
+GET http://localhost:8080/api/
+###
+GET http://localhost:8080/api/accounts
+###
+
+GET http://localhost:8080/api/accounts/1
+###
+
+POST http://localhost:8080/api/accounts
+Content-Type: application/json
+
+{
+    "name": "Bob",
+    "surname": "_",
+    "phone": "EMPYU",
+    "email": "Bob123@sirius.com",
+    "uahAmount": "0.0",
+    "usdAmount": "0.0",
+    "eurAmount": "0.0"
+}
+###
+
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "Bob",
+    "email": "Bob123@sirius.com",
+    "phone": "EMPTY",
+    "password": "1234abcd"
+}
+###
+
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "Bob",
+    "password": "1234abcd"
+}
+###
+
+GET http://localhost:8080/api/
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJCb2IiLCJpYXQiOjE3ODA1NjY5ODAsImV4cCI6MTc4MDU2NzA0MH0.gkf-zOvudBAzkOyJFqnfBeAlnrNhQAZVn8zYxPKk7Jw
